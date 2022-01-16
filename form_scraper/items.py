@@ -19,3 +19,7 @@ class NewsArticle(scrapy.Item):
     content=scrapy.Field()
     url=scrapy.Field()
     site=scrapy.Field()
+
+class NewsArticleMeta(scrapy.Item):
+    url=scrapy.Field()
+    count=scrapy.Field()
