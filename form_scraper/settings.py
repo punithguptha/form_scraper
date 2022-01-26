@@ -60,11 +60,20 @@ ROBOTSTXT_OBEY = True
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 
+
+
+#The below ip corresponds to WSL..If we run the project from wsl make sure to put its ip rather than making it just localhost.To know the ip of the wsl use the command "cat /etc/resolv.conf"
+MONGO_HOST="172.28.80.1"
+MONGO_PORT=27017
+MONGO_DB_NAME="CNN"
+MONGO_COLLECTION_NAME="Articles"
+
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'form_scraper.pipelines.FormScraperPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   # 'form_scraper.pipelines.FormScraperPipeline': 300,
+   # 'form_scraper.pipelines.MongoDBEntryPipeline': 600
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
